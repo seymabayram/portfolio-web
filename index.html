@@ -1,13 +1,347 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio-web</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şeyma Bayram | Software & AI Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-follower" id="follower"></div>
+
+  <!-- ══════════════════════════════════════════
+       1. NAVBAR — fixed, transparent
+       ══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-icon">
+        <div class="logo-outer"></div>
+        <div class="logo-inner"></div>
+      </div>
+      <span class="nav-brand">Şeyma Bayram</span>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero"     onclick="closeNav()">Home</a></li>
+      <li class="nav-dot">•</li>
+      <li><a href="#skills"   onclick="closeNav()">Skills</a></li>
+      <li class="nav-dot">•</li>
+      <li><a href="#about"    onclick="closeNav()">About</a></li>
+      <li class="nav-dot">•</li>
+      <li><a href="#work"     onclick="closeNav()">Projects</a></li>
+      <li class="nav-dot">•</li>
+      <li><a href="#contact"  onclick="closeNav()">Contact</a></li>
+    </ul>
+
+    <div class="nav-socials">
+      <a href="https://github.com/seymabayram" target="_blank" rel="noopener" class="social-btn liquid-glass" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/seyma-bayram" target="_blank" rel="noopener" class="social-btn liquid-glass" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       2. HERO — video background, centered content
+       ══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_120549_0cd82c36-56b3-4dd9-b190-069cfc3a623f.mp4" type="video/mp4">
+    </video>
+    <div class="hero-fade"></div>
+
+    <div class="hero-content">
+      <!-- Single large avatar -->
+      <div class="avatar-single">
+        <img src="assets/avatar.png" alt="Şeyma Bayram">
+      </div>
+
+      <!-- Main heading -->
+      <h1 class="hero-heading">
+        Şeyma <em>Bayram</em><br>
+        <span class="hero-heading-sub">Building <em>Digital</em> Experiences</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle-text">
+        3rd year Software Engineering student at OSTİM Technical University —
+        specializing in deep learning, computer vision, and full-stack development.
+        3× Teknofest finalist.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-btns">
+        <a href="#work" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-outline liquid-glass">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">Scroll to explore</div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       3. SKILLS — "Search has changed" adapted
+       ══════════════════════════════════════════ -->
+  <section id="skills" class="skills-section">
+    <h2 class="section-heading reveal">
+      Tech has <em>changed.</em><br>Have you kept up?
+    </h2>
+    <p class="section-subtitle reveal">
+      From intelligent systems to polished interfaces — building across the full stack
+      with a focus on performance, clarity, and real-world impact.
+    </p>
+
+    <div class="cards-grid">
+      <!-- Card 1: Frontend -->
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="6" y="10" width="36" height="28" rx="3"/>
+            <polyline points="16,21 10,27 16,33"/>
+            <polyline points="32,21 38,27 32,33"/>
+            <line x1="22" y1="18" x2="26" y2="36"/>
+          </svg>
+        </div>
+        <span class="skill-name">Frontend</span>
+        <p class="skill-desc">React · Next.js · TypeScript · Tailwind CSS · HTML5</p>
+      </div>
+
+      <!-- Card 2: Backend -->
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <rect x="8" y="8" width="32" height="10" rx="2"/>
+            <rect x="8" y="22" width="32" height="10" rx="2"/>
+            <rect x="8" y="36" width="32" height="5" rx="2"/>
+            <circle cx="34" cy="13" r="2" fill="currentColor" stroke="none"/>
+            <circle cx="34" cy="27" r="2" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <span class="skill-name">Backend</span>
+        <p class="skill-desc">Node.js · Express · Python · C# · ASP.NET Core · SQL</p>
+      </div>
+
+      <!-- Card 3: AI / CV -->
+      <div class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="24" cy="24" r="8"/>
+            <circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/>
+            <line x1="24" y1="6"  x2="24" y2="14"/>
+            <line x1="24" y1="34" x2="24" y2="42"/>
+            <line x1="6"  y1="24" x2="14" y2="24"/>
+            <line x1="34" y1="24" x2="42" y2="24"/>
+            <line x1="10" y1="10" x2="16" y2="16"/>
+            <line x1="32" y1="32" x2="38" y2="38"/>
+            <line x1="38" y1="10" x2="32" y2="16"/>
+            <line x1="16" y1="32" x2="10" y2="38"/>
+          </svg>
+        </div>
+        <span class="skill-name">AI / Computer Vision</span>
+        <p class="skill-desc">PyTorch · OpenCV · YOLO · Deep Learning · Data Analysis</p>
+      </div>
+    </div>
+
+    <p class="skills-tagline reveal">
+      "If you're not building with AI, someone else already is."
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       4. ABOUT / MISSION — scroll word reveal
+       ══════════════════════════════════════════ -->
+  <section id="about" class="mission-section">
+    <div class="mission-video-wrap reveal">
+      <video class="mission-video" autoplay muted loop playsinline>
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_132944_a0d124bb-eaa1-4082-aa30-2310efb42b4b.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="word-reveal-wrap">
+      <p class="word-reveal-p1" id="reveal-p1"></p>
+      <p class="word-reveal-p2" id="reveal-p2"></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       5. PROJECTS / SOLUTION
+       ══════════════════════════════════════════ -->
+  <section id="work" class="projects-section">
+    <span class="section-label reveal">04 / Selected Works</span>
+    <h2 class="section-heading reveal">
+      Recent <em>Projects</em>
+    </h2>
+
+    <div class="projects-video-wrap reveal">
+      <video class="projects-video" autoplay muted loop playsinline>
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_125119_8e5ae31c-0021-4396-bc08-f7aebeb877a2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="projects-grid">
+      <a href="https://github.com/seymabayram/DormitoryManagementSystem" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="project-card-num">01</div>
+        <h3>Dormitory Management System</h3>
+        <p>End-to-end management portal with role-based access control, room allocation, and real-time tracking for university dormitories.</p>
+        <div class="project-card-tags">ASP.NET CORE MVC · SQL SERVER</div>
+        <span class="project-arrow">→</span>
+      </a>
+      <a href="https://github.com/seymabayram/TrustVerify-CLI" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="project-card-num">02</div>
+        <h3>TrustVerify CLI</h3>
+        <p>Security-focused CLI tool for file integrity verification using SHA-256 hashing and RSA digital signatures.</p>
+        <div class="project-card-tags">PYTHON · SHA-256 · CRYPTOGRAPHY</div>
+        <span class="project-arrow">→</span>
+      </a>
+      <a href="https://github.com/seymabayram/mhd-gui-project" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="project-card-num">03</div>
+        <h3>Assembly Line Balancing</h3>
+        <p>Industrial optimization tool with a real-time GUI for tracking and balancing production line workloads.</p>
+        <div class="project-card-tags">PYTHON · OPTIMIZATION · GUI</div>
+        <span class="project-arrow">→</span>
+      </a>
+      <a href="https://github.com/seymabayram/earthquake-simulator" target="_blank" rel="noopener" class="project-card reveal">
+        <div class="project-card-num">04</div>
+        <h3>Earthquake Simulator</h3>
+        <p>Physics-based simulation of seismic activity and structural impact, built with browser-native technologies.</p>
+        <div class="project-card-tags">HTML5 · JAVASCRIPT · PHYSICS</div>
+        <span class="project-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       6. CONTACT / CTA — HLS video background
+       ══════════════════════════════════════════ -->
+  <section id="contact" class="contact-section">
+    <video id="hls-video" class="contact-bg-video" autoplay muted loop playsinline></video>
+    <div class="contact-overlay"></div>
+
+    <div class="contact-content">
+      <div class="cta-logo">
+        <div class="cta-logo-outer"></div>
+        <div class="cta-logo-inner"></div>
+      </div>
+
+      <h2 class="contact-heading reveal">
+        Let's <em>Work</em><br>Together
+      </h2>
+      <p class="contact-sub reveal">
+        Open to internships, collaborations, and exciting projects.
+        Let's build something meaningful.
+      </p>
+
+      <div class="contact-links reveal">
+        <a href="mailto:bayramseyma966@gmail.com">bayramseyma966@gmail.com</a>
+        <a href="https://linkedin.com/in/seyma-bayram" target="_blank" rel="noopener">linkedin.com/in/seyma-bayram</a>
+        <a href="https://github.com/seymabayram" target="_blank" rel="noopener">github.com/seymabayram</a>
+      </div>
+
+      <div class="cta-btns reveal">
+        <a href="mailto:bayramseyma966@gmail.com" class="btn-cta-primary">Send Email</a>
+        <a href="https://linkedin.com/in/seyma-bayram" target="_blank" rel="noopener" class="btn-cta-outline liquid-glass">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       7. FOOTER
+       ══════════════════════════════════════════ -->
+  <footer>
+    <p class="footer-copy">© 2026 Şeyma Bayram. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <!-- HLS.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <script>
+    // ── Mobile nav ──
+    function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
+    function closeNav()  { document.getElementById('nav-links').classList.remove('open'); }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // ── Custom cursor ──
+      const cursor   = document.getElementById('cursor');
+      const follower = document.getElementById('follower');
+      document.addEventListener('mousemove', e => {
+        cursor.style.transform   = `translate(${e.clientX - 2.5}px, ${e.clientY - 2.5}px)`;
+        follower.style.transform = `translate(${e.clientX - 13}px, ${e.clientY - 13}px)`;
+      });
+
+      // ── Navbar scroll ──
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
+
+      // ── Scroll reveal (IntersectionObserver) ──
+      const revealEls = document.querySelectorAll('.reveal');
+      const revealObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+      }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+      revealEls.forEach(el => revealObs.observe(el));
+
+      // ── Word-by-word reveal (Mission/About section) ──
+      const p1text = "I'm building at the intersection of intelligent systems and great user experience — where curiosity meets clarity, and every line of code becomes a step toward something meaningful.";
+      const p2text = "A developer who finds depth in algorithms, reach in clean interfaces, and purpose in projects that make a real difference for everyone involved.";
+
+      // Words to highlight bright in p1
+      const highlighted = new Set(['intelligent', 'curiosity', 'clarity', 'meaningful.']);
+
+      function buildWordSpans(text, highlighted) {
+        return text.split(' ').map(word => {
+          const cls = highlighted && highlighted.has(word)
+            ? 'word'
+            : 'word hero-subtitle';
+          return `<span class="${cls}">${word}</span>`;
+        }).join(' ');
+      }
+
+      document.getElementById('reveal-p1').innerHTML = buildWordSpans(p1text, highlighted);
+      document.getElementById('reveal-p2').innerHTML = buildWordSpans(p2text, null);
+
+      const allWords = document.querySelectorAll('.word');
+      const missionSection = document.getElementById('about');
+
+      function animateWords() {
+        const rect     = missionSection.getBoundingClientRect();
+        const progress = Math.max(0, Math.min(1,
+          (window.innerHeight - rect.top) / (window.innerHeight + rect.height * 0.6)
+        ));
+        const lit = Math.floor(progress * allWords.length);
+        allWords.forEach((w, i) => w.classList.toggle('lit', i < lit));
+      }
+
+      window.addEventListener('scroll', animateWords, { passive: true });
+      animateWords();
+
+      // ── HLS video (Contact / CTA section) ──
+      const hlsVideo = document.getElementById('hls-video');
+      const hlsUrl   = 'https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8';
+
+      if (Hls.isSupported()) {
+        const hls = new Hls({ autoStartLoad: true });
+        hls.loadSource(hlsUrl);
+        hls.attachMedia(hlsVideo);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => hlsVideo.play().catch(() => {}));
+      } else if (hlsVideo.canPlayType('application/vnd.apple.mpegurl')) {
+        // Safari native HLS
+        hlsVideo.src = hlsUrl;
+        hlsVideo.play().catch(() => {});
+      }
+    });
+  </script>
+</body>
 </html>
