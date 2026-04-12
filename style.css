@@ -379,6 +379,127 @@ body  {
 .project-card:hover .project-arrow { transform:translateX(5px); color:hsl(var(--foreground)); }
 
 /* ─────────────────────────────────────────────────────
+   5.5 EXPERIENCE SECTION
+   ───────────────────────────────────────────────────── */
+.experience-section {
+  padding: 7rem 7vw;
+  border-top: 1px solid hsl(var(--border) / .3);
+  background: linear-gradient(135deg, rgba(30,30,35,.4) 0%, rgba(0,0,0,0) 100%);
+}
+
+.exp-container { max-width: 900px; margin: 0 auto; }
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.exp-card {
+  padding: 2rem;
+  border-left: 2px solid hsl(var(--accent) / .6);
+  background: hsl(var(--card) / .4);
+  border-radius: 0.5rem;
+  transition: all .3s ease;
+}
+.exp-card:hover {
+  background: hsl(var(--card) / .7);
+  border-left-color: hsl(var(--accent));
+  transform: translateX(8px);
+}
+
+.exp-header {
+  margin-bottom: 1rem;
+}
+.exp-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.4rem;
+}
+.exp-company {
+  font-size: 0.85rem;
+  color: hsl(var(--accent));
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.exp-dates {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.exp-tech {
+  font-size: 0.75rem;
+  color: hsl(var(--accent) / .8);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* ─────────────────────────────────────────────────────
+   5.7 ACHIEVEMENTS / CERTIFICATIONS SECTION
+   ───────────────────────────────────────────────────── */
+.achievements-section {
+  padding: 7rem 7vw;
+  border-top: 1px solid hsl(var(--border) / .3);
+}
+
+.ach-container { max-width: 900px; margin: 0 auto; }
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.achievement-item {
+  padding: 2rem;
+  border: 1px solid hsl(var(--border) / .4);
+  border-radius: 0.5rem;
+  background: hsl(var(--card) / .3);
+  transition: all .3s ease;
+}
+.achievement-item:hover {
+  background: hsl(var(--card) / .6);
+  border-color: hsl(var(--accent) / .5);
+  transform: translateY(-4px);
+}
+
+.ach-year {
+  display: block;
+  font-size: 0.75rem;
+  color: hsl(var(--accent));
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.achievement-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.6rem;
+}
+
+.achievement-item p {
+  font-size: 0.9rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.65;
+}
+
+/* ─────────────────────────────────────────────────────
    6. CONTACT / CTA SECTION
    ───────────────────────────────────────────────────── */
 .contact-section {
@@ -448,6 +569,112 @@ footer {
 .footer-links a:hover { color:hsl(var(--foreground)); }
 
 /* ─────────────────────────────────────────────────────
+   5.8 JOURNEY SECTION
+   ───────────────────────────────────────────────────── */
+.journey-section {
+  padding: 6rem 7vw;
+  background: hsl(var(--background));
+  border-bottom: 1px solid hsl(var(--border) / .2);
+}
+
+.journey-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.journey-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.journey-card {
+  padding: 2.5rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border) / .3);
+  border-radius: .5rem;
+  transition: all .35s cubic-bezier(.23,1,.32,1);
+}
+
+.journey-card:hover {
+  border-color: hsl(var(--accent));
+  background: hsl(var(--card) / .8);
+  box-shadow: 0 8px 32px rgba(0,0,0,.3);
+}
+
+.journey-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
+  font-weight: 600;
+}
+
+.journey-card p {
+  color: hsl(var(--secondary-foreground));
+  line-height: 1.75;
+  font-size: .95rem;
+}
+
+/* ─────────────────────────────────────────────────────
+   5.9 APPROACH SECTION
+   ───────────────────────────────────────────────────── */
+.approach-section {
+  padding: 6rem 7vw;
+  background: hsl(var(--card) / .3);
+  border-bottom: 1px solid hsl(var(--border) / .2);
+}
+
+.approach-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.approach-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pillar {
+  padding: 2.5rem 2rem;
+  background: hsl(var(--background));
+  border-left: 3px solid hsl(var(--accent));
+  border-radius: .25rem;
+  transition: all .35s cubic-bezier(.23,1,.32,1);
+  position: relative;
+}
+
+.pillar:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(0,0,0,.4);
+  border-color: hsl(var(--foreground));
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(var(--accent));
+  display: block;
+  margin-bottom: 1rem;
+  font-family: 'Instrument Serif', serif;
+}
+
+.pillar h3 {
+  font-size: 1.2rem;
+  color: hsl(var(--foreground));
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.pillar p {
+  color: hsl(var(--secondary-foreground));
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────
    ANIMATIONS
    ───────────────────────────────────────────────────── */
 @keyframes fadeUp {
@@ -483,6 +710,12 @@ footer {
   .cards-grid { grid-template-columns:1fr; max-width:340px; }
   .projects-grid { grid-template-columns:1fr; }
   .cta-btns { flex-direction:column; align-items:center; }
+  
+  .achievements-grid { grid-template-columns: 1fr; }
+  .exp-card { margin-left: 0; padding-left: 1.5rem; }
+  
+  .approach-pillars { grid-template-columns: 1fr; }
+  .journey-card { padding: 1.5rem; }
 
   .custom-cursor,.cursor-follower { display:none!important; }
 }
